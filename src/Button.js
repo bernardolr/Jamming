@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 
-function Button({text, onClick}) {
+function Button({text, id, onClick}) {
     const [onHover, setOnHover] = useState(false);
 
     const handleMouseEnter = () => {
@@ -14,7 +14,7 @@ function Button({text, onClick}) {
     
     return (
         <div>
-                <button className={`Search-Button ${onHover ? 'hovered' : ''}`} type='submit' onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={onClick}>{text}</button>
+                <button id={id} className={`General-Button ${onHover ? 'hovered' : ''}`} type='submit' onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={onClick} >{text}</button>
 
         </div>
 

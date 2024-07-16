@@ -11,10 +11,14 @@ function SearchBar() {
     
     return (
         <div>
-            <form>
+            <form >
                 <input type="search" id="searchInput"></input>
-                <Button text={buttonText}/>
+                <div id="Search-Button" >
+                    <Button text={buttonText}/>
+                </div>
+                
             </form>
+            
 
         </div>
 

@@ -1,14 +1,11 @@
 import React, { useState } from 'react';
 import './App.css';
+import DeleteTrack from './DeleteTrack';
 
 function TrackList() {
     return (
         <div >
-                <ul>
-                    <li>Birds of a Feather</li>
-                    <li>Un Hombre Busca una Mujer</li>
-                   
-                </ul>
+                <DeleteTrack/>
 
         </div>
 

@@ -16,7 +16,7 @@ function Playlist() {
                 <TrackList/>
 
                 <div id='Save-To-Spotify'>
-                    <Button text={buttonText}/>
+                    <Button  text={buttonText}/>
                 </div>
         </div>
 
