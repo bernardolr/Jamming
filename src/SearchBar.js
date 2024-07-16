@@ -1,23 +1,19 @@
 import React, { useState } from 'react';
 import './App.css';
+import Button from './Button';
 
 function SearchBar() {
-    const [onHover, setOnHover] = useState(false);
+    const [buttonText, setButtonText] = useState('Search');
 
-    const handleMouseEnter = () => {
-        setOnHover(true);
-    };
-
-    const handleMouseLeave = () => {
-        setOnHover(false);
-    }
+    const handleChangeText = () => {
+        setButtonText('Text Changed!');
+      };
     
     return (
         <div>
             <form>
-                <label> Search: </label>
                 <input type="search" id="searchInput"></input>
-                <button className={`Search-Button ${onHover ? 'hovered' : ''}`} type='submit' onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>Search</button>
+                <Button text={buttonText}/>
             </form>
 
         </div>

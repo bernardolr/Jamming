@@ -32,10 +32,10 @@
 
 .Search-Button {
   justify-content: center;
-  padding: 5px;
+  padding: 10px 20px 10px 20px;
+  margin-top: 20px;
   text-align: center;
   align-items: center;
-  margin-left: 10px;
   border-radius: 5px;
   border-color: white;
   cursor: pointer;
@@ -51,7 +51,7 @@
   border-style: hidden;
   color: white;
   font-weight: bold;
-  padding: 5px;
+  padding: 10px 20px 10px 20px;
   background-color: #1e1e1eff;
 }
 
@@ -98,10 +98,12 @@
 
 }
 
-.Playlist {
-  margin-left: 10px;
+#Save-To-Spotify {
+  text-align: right;
+  align-items: right;
+  justify-content: right;
+  margin: 0px 10px 10px 0px;
 }
-
 
 ul {
   list-style-type: none;
@@ -109,8 +111,25 @@ ul {
 }
 
 li {
-  margin: 10px 0px 10px 0px;
+  margin-left: 10px;
+  list-style-type: none;
+  display: flex;
   
+}
+
+#Track {
+  width: 60%;
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+
+#Add-Button {
+  display: flex;
+  width: 40%;
+  align-items: center;
+  padding: 20px;
+  background-color: red;
 }
 
 @media screen and (max-width: 600px) {
