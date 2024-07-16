@@ -4,11 +4,6 @@
   
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
 .Search-Bar {
   background-color: black;
@@ -43,7 +38,7 @@
   border-radius: 5px;
   border-color: white;
   cursor: pointer;
-  transition: 0.3ms ease;
+  transition: all .5s ease;
   border-style: hidden;
   font-weight: bold;
 
@@ -55,10 +50,14 @@
   border-style: hidden;
 }
 
-.searchButton.hovered {
-  background-color: grey;
+.Search-Button.hovered {
+  background-color: #1DB954;
   color: white;
   font-weight: bold;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2);
+  outline-color: #1DB954;
+  outline-offset: 10px;
+  text-shadow: 1px 1px 2px #1DB954;
 }
 
 .Card-Header {
@@ -84,8 +83,6 @@
   clear: both;
   width: 100%;
   display: flex;
-  
-
 
 }
 
@@ -101,8 +98,8 @@ li {
 }
 
 @media screen and (max-width: 600px) {
-  .Row {
-    width: 100%;
+  .Card {
+    width: 150%;
     display: block;
     margin-bottom: 20px;
   }
