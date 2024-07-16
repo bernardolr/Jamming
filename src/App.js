@@ -9,7 +9,7 @@ function App() {
   return (
     <div className='App'>
       <header className="App-Header">
-        
+        <nav>Spotify Playlist</nav>
         
       </header>
       <div  className='Search-Bar'>
