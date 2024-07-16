@@ -1,10 +1,7 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App{
+  background-color: black;
+  min-height: 100vh;
+  
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -13,9 +10,19 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Search-Bar {
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  margin: 5px;
+  text-align: center;
+
+
+}
+
+.App-Header {
+  background-color: black;
+  min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,11 +35,75 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.Search-Button {
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin-left: 10px;
+  border-radius: 5px;
+  border-color: white;
+  cursor: pointer;
+  transition: 0.3ms ease;
+  border-style: hidden;
+  font-weight: bold;
+
+}
+
+#searchInput {
+  border-radius: 5px;
+  border-color: black;
+  border-style: hidden;
+}
+
+.searchButton.hovered {
+  background-color: grey;
+  color: white;
+  font-weight: bold;
+}
+
+.Card-Header {
+  border-radius: 10px;
+  background-color: white;
+  text-align: left;
+  margin: 5px;
+  padding: 5px;
+}
+
+.Card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 5px;
+  margin: 20px; 
+  float: left;
+  width: 50%;
+  
+}
+
+.Row {
+  content: "";
+  clear: both;
+  width: 100%;
+  display: flex;
+  
+
+
+}
+
+
+ul {
+  list-style-type: none;
+  margin: 10px ;
+}
+
+li {
+  margin: 10px 0px 10px 0px;
+  
+}
+
+@media screen and (max-width: 600px) {
+  .Row {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
   }
 }
