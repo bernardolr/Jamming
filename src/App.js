@@ -18,8 +18,6 @@ function App() {
       <div className='Row'>
         <div className='Card'> <SearchResults/> </div>
         <div className='Card'> <Playlist/></div>
-
-
       </div>
       
       
