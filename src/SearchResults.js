@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import AddTrack from './AddTrack';
-
-
+import TrackList from './Tracklist';
 
 function SearchResults() {
 
@@ -14,6 +13,11 @@ function SearchResults() {
         song2: {
             name: "Starlight",
             artist: "Martin Garrix"
+
+        },
+        song3: {
+            name: "Everything Goes On",
+            artist: "Porter Robinson"
 
         }
     }

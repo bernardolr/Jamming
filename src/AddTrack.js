@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import Button from './Button';
 
-function AddTrack({id, name, artist}) {
+function AddTrack({id, name, artist, onAdd}) {
 
 const [songName, setSongName] = useState(name);    
 const [artistName, setArtistName] = useState(artist);
@@ -31,7 +31,7 @@ const [trackText, setTrackText] = useState('');
                 </div>
                 
                 <div id='Add-Button-Layout'>
-                    <Button id='Add-Button' text={'+'}/>
+                    <Button id='Add-Button' text={'+'} onClick={onAdd}/>
                 </div>
                 </div>
 
