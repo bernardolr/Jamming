@@ -6,7 +6,7 @@ import Button from './Button';
 function TrackList({ tracks, onRemove}) {
     return (
         <div>
-            <h2 className='Card-Header' style={{ textAlign: 'center' }} >Selected Tracks</h2>
+            
             <div>
                 {tracks.map((track) => (
                     <div key={track.id} className='Row'>
@@ -16,7 +16,7 @@ function TrackList({ tracks, onRemove}) {
                                 <div>{track.artist}</div>
                             </div>
                             <div id='Remove-Button-Layout'>
-                                <Button  text={'-'} id='Delete-Button' onClick={() => onRemove(track.id)}/>
+                                <Button text={'-'} id='Delete-Button' onClick={() => onRemove(track.id)}/>
                             </div>
                         </div>
                     </div>
