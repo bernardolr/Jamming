@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import './App.css';
 import SearchBar from './SearchBar';
@@ -8,10 +7,20 @@ import Playlist from './Playlist';
 function App() {
 
   const [tracks, setTracks] = useState([]);
+  const [selectedTracks, setSelectedTracks] = useState([]);
 
     // Function to update tracks, passed to SearchResults
     const updateTracks = (newTracks) => {
         setTracks(newTracks);
+    };
+
+    const updateSelectedTracks = (newSelectedTracks) => {
+      setSelectedTracks(newSelectedTracks);
+    }
+
+    const removeTrack = (id) => {
+      const newSelectedTracks = selectedTracks.filter(track => track.id !== id);
+      setSelectedTracks(newSelectedTracks);
     };
     
   return (
@@ -25,10 +34,12 @@ function App() {
       </div>
       <div className='Row'>
         <div className='Card'> 
-          <SearchResults onUpdateTracks={updateTracks}/> 
+
+          <SearchResults onUpdateTracks={updateTracks} selectedTracks={selectedTracks} onUpdateSelectedTracks={updateSelectedTracks} onRemoveTrack={removeTrack} /> 
+
         </div>
         <div className='Card'> 
-          <Playlist tracks={tracks}/>
+          <Playlist tracks={selectedTracks} onRemoveTrack={removeTrack}/>
         </div>
       </div>
       

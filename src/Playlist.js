@@ -4,7 +4,7 @@ import Button from './Button';
 import TrackList from './Tracklist';
 
 
-function Playlist({tracks}) {
+function Playlist({tracks, onRemoveTrack}) {
     const [buttonText, setButtonText] = useState('Save to Spotify');
 
     const handleChangeText = () => {
@@ -15,7 +15,8 @@ function Playlist({tracks}) {
     return (
         <div >
                 <h1 className='Card-Header'>Playlist</h1>
-                    <TrackList tracks={tracks}/>
+                
+                    <TrackList tracks={tracks} onRemove={onRemoveTrack}/>
 
                 <div id='Save-To-Spotify'>
                     <Button  text={buttonText}/>

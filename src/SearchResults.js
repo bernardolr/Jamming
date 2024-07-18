@@ -3,7 +3,8 @@ import './App.css';
 import AddTrack from './AddTrack';
 import TrackList from './Tracklist';
 
-function SearchResults({ onUpdateTracks }) {
+
+function SearchResults({ onUpdateTracks, selectedTracks, onUpdateSelectedTracks, onRemoveTrack }) {
 
     const initialTracks = {
         song1: {
@@ -23,16 +24,13 @@ function SearchResults({ onUpdateTracks }) {
     }
 
     const [tracks, setTracks] = useState(initialTracks);
-    const [selectedTracks, setSelectedTracks] = useState([]);
 
     const addTrack = (id) => {
         const track = tracks[id];
-        setSelectedTracks([...selectedTracks, { id, ...track }]);
+        const newSelectedTracks = [...selectedTracks, {id, ...track}];
+        onUpdateSelectedTracks(newSelectedTracks);
     };
 
-    const removeTrack = (id) => {
-        setSelectedTracks(selectedTracks.filter(track => track.id !== id));
-    };
 
     const isTrackSelected = (id) => {
         return selectedTracks.some(track => track.id === id);
@@ -54,12 +52,11 @@ function SearchResults({ onUpdateTracks }) {
                         name={name}
                         artist={artist}
                         onAdd={() => addTrack(id)}
-                        onRemove={() => removeTrack(id)}
+                        onRemove={() => onRemoveTrack(id)}
                         isSelected={isTrackSelected(id)}
                     />
                 ))}
             </div>
-            <TrackList tracks={selectedTracks} onRemove={removeTrack} />
 
             
 
