@@ -1,51 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import AddTrack from './AddTrack';
-import TrackList from './Tracklist';
 
+function SearchResults({ searchResults, selectedTracks, onUpdateSelectedTracks, onRemoveTrack }) {
+    const [tracks, setTracks] = useState([]);
 
-function SearchResults({ onUpdateTracks, selectedTracks, onUpdateSelectedTracks, onRemoveTrack }) {
-
-    const initialTracks = {
-        song1: {
-            name: "Birds of a Feather",
-            artist: "Billie Eilish"
-        },
-        song2: {
-            name: "Starlight",
-            artist: "Martin Garrix"
-
-        },
-        song3: {
-            name: "Everything Goes On",
-            artist: "Porter Robinson"
-
-        }
-    }
-
-    const [tracks, setTracks] = useState(initialTracks);
+    useEffect(() => {
+        setTracks(searchResults);
+    }, [searchResults]);
 
     const addTrack = (id) => {
-        const track = tracks[id];
-        const newSelectedTracks = [...selectedTracks, {id, ...track}];
+        const track = tracks.find(track => track.id === id);
+        const newSelectedTracks = [...selectedTracks, track];
         onUpdateSelectedTracks(newSelectedTracks);
     };
-
 
     const isTrackSelected = (id) => {
         return selectedTracks.some(track => track.id === id);
     };
 
-
-    
-
-
-
     return (
-        <div >
+        <div>
             <h1 className='Card-Header'>Results</h1>
             <div>
-                {Object.entries(tracks).map(([id, { name, artist }]) => (
+                {tracks.map(({ id, name, artist }) => (
                     <AddTrack
                         key={id}
                         id={id}
@@ -57,14 +35,8 @@ function SearchResults({ onUpdateTracks, selectedTracks, onUpdateSelectedTracks,
                     />
                 ))}
             </div>
-
-            
-
-
         </div>
-
     );
-
 }
 
 export default SearchResults;

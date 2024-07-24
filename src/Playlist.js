@@ -10,7 +10,8 @@ function Playlist({tracks, onRemoveTrack}) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log('form submitted with the Playlist Name:', PlaylistName)
+        console.log('form submitted with the Playlist Name:', PlaylistName);
+        console.log()
         // Here you can handle the form submission, e.g., send the data to an API
 
       };
@@ -37,7 +38,7 @@ function Playlist({tracks, onRemoveTrack}) {
                 <TrackList tracks={tracks} onRemove={onRemoveTrack}/>
 
                 <div id='Save-To-Spotify'>
-                    <Button type={"submit"} text={buttonText}/>
+                    <Button type={"submit"} text={buttonText} onClick={tracks.onSave}/>
                 </div>
             </form>
         </div>
