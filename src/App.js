@@ -8,6 +8,7 @@ import { Spotify } from './util/Spotify';
 function App() {
     const [searchResults, setSearchResults] = useState([]);
     const [selectedTracks, setSelectedTracks] = useState([]);
+    const [playlistName, setPlaylistName] = useState("New Playlist");
 
     const updateSelectedTracks = (newSelectedTracks) => {
         setSelectedTracks(newSelectedTracks);
@@ -20,7 +21,10 @@ function App() {
 
     const savePlaylist = () => {
         const trackURIs = selectedTracks.map((t) => t.uri);
-        // Add logic to save the playlist
+        Spotify.savePlaylist(playlistName, trackURIs).then(() => {
+            setPlaylistName("New Playlist");
+            setSelectedTracks([]);
+        });
     };
 
     const search = (term) => {
@@ -50,6 +54,8 @@ function App() {
                         tracks={selectedTracks}
                         onRemoveTrack={removeTrack}
                         onSave={savePlaylist}
+                        playlistName={playlistName}
+                        setPlaylistName={setPlaylistName}
                     />
                 </div>
             </div>
