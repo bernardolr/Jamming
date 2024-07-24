@@ -1,6 +1,7 @@
 let accessToken;
 const clientID = "8d619b65e5374799abf7e81f17a959ae";
-const redirectUrl = "http://localhost:3000";
+//const redirectUrl = "http://localhost:3000";
+const redirectUrl = "https://BLRSpotifyPlaylistMaker.surge.sh";
 
 const Spotify = {
     getAccessToken() {
