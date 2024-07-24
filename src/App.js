@@ -35,8 +35,10 @@ function App() {
     return (
         <div className='App'>
             <header className="App-Header">
-                <nav>Spotify Playlist</nav>
+                <nav>Spotify Playlist Maker</nav>
+                
             </header>
+            <p style={{textAlign: 'right', color: 'white', fontWeight: 'bold', marginTop: '10px', marginBottom: '10px', marginRight: '20px'}}>by: Bernardo Lopez Rosso</p>
             <div className='Search-Bar'>
                 <SearchBar onSearch={search} />
             </div>
